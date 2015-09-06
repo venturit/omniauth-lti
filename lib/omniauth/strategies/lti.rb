@@ -53,6 +53,7 @@ module OmniAuth
         log :info, "Checking LTI params for key #{key}: #{request.params}"
         log :info, "Checking options.oauth_credentials[key] #{options.oauth_credentials[key]}"
         log :info, "Checking LTI params for key #{key}: #{request.params}"
+        log :info, "Checking LTI request: #{request.inspect}"
         @tp = IMS::LTI::ToolProvider.new(key, options.oauth_credentials[key], request.params)
         log :info, "Valid request? #{@tp.valid_request!(request)}"
         @tp.valid_request!(request)
