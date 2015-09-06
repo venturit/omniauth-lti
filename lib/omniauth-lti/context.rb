@@ -32,7 +32,9 @@ module Omniauth
         return nil unless lti_launch_params
         key = lti_launch_params['oauth_consumer_key']
         secret = self.lti_credentials[key] if self.lti_credentials
-        puts lti_launch_params
+        log :info,  "$$$$$$$$$$$$$$$$$$"
+        log :info,  lti_launch_params
+        log :info,  "$$$$$$$$$$$$$$$$$$ 1"
         @tp ||= IMS::LTI::ToolProvider.new(key, 
                                            secret, 
                                            lti_launch_params)
